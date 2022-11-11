@@ -59,6 +59,8 @@ add_compile_options(-Wall
     -fstack-clash-protection
     -fvisibility=hidden
     -fdiagnostics-color=auto
+    -march=skylake
+    -mtune=skylake
     -grecord-gcc-switches
     -g3
     -pipe
