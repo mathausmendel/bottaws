@@ -92,6 +92,8 @@ conan_cmake_configure(
     IMPORTS "lib, *.so* -> ./conanlibs"
     OPTIONS fmt:shared=True
     OPTIONS qt:shared=True
+    OPTIONS qt:qtwebsockets=True
+    OPTIONS qt:qtnetworkauth=True
     OPTIONS qt:with_pq=False
     OPTIONS qt:with_odbc=False
     OPTIONS qt:with_md4c=False
@@ -113,7 +115,7 @@ install(DIRECTORY
 
 find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
 find_package(fmt REQUIRED)
-find_package(Qt6 REQUIRED)
+find_package(Qt6 REQUIRED COMPONENTS WebSockets NetworkAuth)
 
 include_directories(SYSTEM ${fmt_INCLUDE_DIRS}
     SYSTEM ${Qt6_INCLUDE_DIRS})
